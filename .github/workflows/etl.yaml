@@ -32,8 +32,8 @@ jobs:
           Rscript R/load_data.R
       - name: Add files
         run: |
-          git config --global user.email "nikos.korfiatis@gmail.com"
-          git config --global user.name "nkorf"
+          git config --global user.email "Teng-Yi.Chen@warwick.ac.uk"
+          git config --global user.name "DylanCTY"
           git add --all figures/
       - name: Commit files
         run: |
