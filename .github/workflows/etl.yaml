@@ -6,6 +6,8 @@ on:
   push:
     branches: [ main ]
 
+workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,16 +32,3 @@ jobs:
       - name: Execute R script
         run: |
           Rscript R/load_data.R
-      - name: Add files
-        run: |
-          git config --global user.email "Teng-Yi.Chen@warwick.ac.uk"
-          git config --global user.name "DylanCTY"
-          git add --all figures/
-      - name: Commit files
-        run: |
-          git commit -m "Add regression plot figure"
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: main
